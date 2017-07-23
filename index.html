@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<title>Ir arriba</title>
+<style type="text/css">
+	body{font-family:Verdana, Geneva, sans-serif;}
+	#IrArriba {
+	position: fixed;
+	float:right;	
+	bottom: 30px; /* Distancia desde abajo */
+	right: 30px; /* Distancia desde la derecha */
+	}
+	
+	#IrArriba span {
+	width: 64px; /* Ancho del botón */
+	height: 64px; /* Alto del botón */
+	display: block;
+	background: url(Up-64.png) no-repeat center center;
+	}
+</style>
+</head>
+<body bgcolor="#99FF99">
+	<h1>Ir Arriba Animado (aparece y desaparece) - jQuery</h1>
+    <h2><a href="http://codigoweblibre.blogspot.com" target="_blank">http://codigoweblibre.blogspot.com</a></h2>
+	<table border="1" align="center">
+    	<thead>
+    	<tr>
+        	<td>&nbsp;</td>
+        </tr>
+        </thead>
+        <tbody>
+        	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+        </tbody>
+    </table>
+	
+		<div id='IrArriba'>
+        	<a alt='Ir Arriba' href='#Arriba' title='Ir Arriba'>
+            	<span></span>
+             </a>
+        </div>
+        <script type='text/javascript'>
+			//<![CDATA[
+			//jQuery.noConflict();
+			$(document).ready(function() {
+				$("#IrArriba").hide();
+				$(function () {
+					$(window).scroll(function () {
+						if ($(this).scrollTop() > 200) {	
+							$('#IrArriba').fadeIn();
+						} else {
+							$('#IrArriba').fadeOut();
+						}
+					});
+					$('#IrArriba a').click(function () {	
+						$('body,html').animate({scrollTop: 0}, 800); return false; 
+					});
+				});
+			});
+			//]]>
+        </script>
+</body>
+</html>
